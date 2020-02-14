@@ -5,23 +5,17 @@ import CommentDetail from './CommentDetail'
 import ApprovalCard from './ApprovalCard'
 
 const App = () => {
+    const comments = [0,1,2]
     return (
         <div className='ui container comments'>
-            <ApprovalCard>
-                <CommentDetail 
-                name={faker.name.firstName()+' '+faker.name.lastName()} 
-                avatar={faker.image.avatar()}
-                comment={faker.lorem.sentence()} />
-            </ApprovalCard>
-            
-            <CommentDetail 
-              name={faker.name.firstName()+' '+faker.name.lastName()} 
-              avatar={faker.image.avatar()}
-              comment={faker.lorem.sentence()} />
-            <CommentDetail 
-              name={faker.name.firstName()+' '+faker.name.lastName()} 
-              avatar={faker.image.avatar()}
-              comment={faker.lorem.sentence()} />
+            {comments.map(curr => {
+                return <ApprovalCard>
+                    <CommentDetail 
+                    name={faker.name.firstName()} 
+                    avatar={faker.image.avatar()}
+                    comment={faker.lorem.sentence()} />
+                </ApprovalCard>
+            })}
         </div>
     ) 
 }
